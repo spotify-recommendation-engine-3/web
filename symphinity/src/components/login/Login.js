@@ -45,7 +45,9 @@ function Login () {
             </LoginContainer>
 
             <Link to="/register">
-                <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>SIGN UP</Button>{' '}
+                <ButtonContainer>
+                    <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>SIGN UP</Button>{' '}
+                </ButtonContainer>
             </Link>
         </LoginBackground>
     )
