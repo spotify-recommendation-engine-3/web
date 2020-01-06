@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 function Login () {
     const LoginContainer = styled.div`
@@ -8,7 +9,9 @@ function Login () {
         width: 25rem;
         margin: 0 auto;
         margin-top: 200px;
-        padding: 30px;        
+        padding: 30px;     
+        display: flex;
+        flex-direction: column; 
     `
 
     const LoginBackground = styled.div`
@@ -18,16 +21,18 @@ function Login () {
         width: 100vw;
         display: flex;
         flex-direction: column;
+        align-items: center;
     `
 
     const ButtonContainer = styled.div`
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
     `
 
     return (
         <LoginBackground classNam="login-background">
             <LoginContainer className="login-container">
+                <h2 style={{margin: "10px auto"}}>Log In</h2>
                 <Form>
                     <FormGroup>
                         <Label for="email">Email</Label>
@@ -43,7 +48,9 @@ function Login () {
                 </Form>
             </LoginContainer>
 
-            <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>SIGN UP</Button>{' '}
+            <Link to="/register">
+                <Button color="primary" style={{marginTop:"30px", width: "100px"}}>SIGN UP</Button>
+            </Link>
         </LoginBackground>
     )
 }
