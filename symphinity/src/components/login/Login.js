@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 function Login () {
     const LoginContainer = styled.div`
@@ -43,7 +44,9 @@ function Login () {
                 </Form>
             </LoginContainer>
 
-            <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>SIGN UP</Button>{' '}
+            <Link to="/register">
+                <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>SIGN UP</Button>{' '}
+            </Link>
         </LoginBackground>
     )
 }

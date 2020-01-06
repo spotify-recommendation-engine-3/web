@@ -15,12 +15,13 @@ function App() {
       {/* <Route exact to="/login" component={Login} /> */}
       {/* <PrivateRoute exact to="/song-search" component={SongSearch} /> */}
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Login />
         </Route>
         <Route path="/register">
-          <Register />
+          <Register /> 
         </Route>
+
       </Switch>
     </>
   );
