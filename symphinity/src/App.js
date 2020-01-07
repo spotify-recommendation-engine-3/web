@@ -6,6 +6,7 @@ import Login from './components/login/Login';
 import Register from './components/registration/Register';
 import ArtistSearch from './components/ArtistSearch';
 import './App.css'
+import UserArtists from './components/UserArtists';
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
         </Route>
         <Route path="/register">
           <Register /> 
+        </Route>
+        <Route exact path="/user">
+          <UserArtists />
         </Route>
 
       </Switch>

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 function Login () {
+
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    })
     const LoginContainer = styled.div`
         border: 1px solid black;
         width: 25rem;
@@ -26,17 +32,35 @@ function Login () {
         justify-content: space-around;
     `
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        axios
+        .post('https://spotify-song-suggestor-be.herokuapp.com/api/auth/login', user)
+        .then(response => {
+            localStorage.setItem('token', response.data.token);
+            alert('Yay! Logged In!')
+        })
+        .catch(err => console.log(err.response));
+    }
+
+    const handleChanges = e => {
+        setUser({
+            ...user,
+            [e.target.name]: e.target.value
+        });
+    }
+
     return (
         <LoginBackground classNam="login-background">
             <LoginContainer className="login-container">
-                <Form>
+                <Form onSubmit={handleSubmit}>
                     <FormGroup>
-                        <Label for="email">Email</Label>
-                        <Input type="email" name="email" id="email" placeholder="Email" />
+                        <Label for="username">Username</Label>
+                        <Input type="text" value={user.password} onChange={handleChanges} name="username" id="username" placeholder="Username" />
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input type="password" name="password" id="password" placeholder="Password" />
+                        <Input type="password" onChange={handleChanges} value={user.password} name="password" id="password" placeholder="Password" />
                     </FormGroup>
                     <ButtonContainer className="button-container">
                         <Button color="success">LOG IN</Button>{' '}
