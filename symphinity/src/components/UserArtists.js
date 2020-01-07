@@ -23,14 +23,14 @@ const UserArtists = () => {
           }
       }, [spotifyAuth])
 
-    useEffect(() => {
-        spotifyWithAuth()
-        .get(`/me/top/artists`)
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => console.log(err.response));
-    }, [spotifyAuth])
+    // useEffect(() => {
+    //     spotifyWithAuth()
+    //     .get(`/me/top/artists`)
+    //     .then(response => {
+    //         console.log(response);
+    //     })
+    //     .catch(err => console.log(err.response));
+    // }, [spotifyAuth])
 
     return (
         <div>
