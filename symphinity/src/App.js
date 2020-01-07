@@ -9,18 +9,20 @@ import Register from './components/registration/Register';
 import PrivateRoute from './components/auth/PrivateRoute';
 import SongSearch from './components/SongSearch';
 
-function App() {
+
+function App() { 
   return (
     <>
       {/* <Route exact to="/login" component={Login} /> */}
       {/* <PrivateRoute exact to="/song-search" component={SongSearch} /> */}
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <Login />
         </Route>
         <Route path="/register">
-          <Register />
+          <Register /> 
         </Route>
+
       </Switch>
     </>
   );
