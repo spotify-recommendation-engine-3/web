@@ -5,7 +5,6 @@ import SpotifyAuth from './auth/SpotifyAuth';
 const UserArtists = () => {
     const [songs, setSongs] = useState([]);
     const [userArtists, setUserArtists] = useState();
-    const [spotifyAuth, setSpotifyAuth] = useState('');
 
     const getHashParams = () => {
         var hashParams = {};
@@ -14,8 +13,10 @@ const UserArtists = () => {
         while (e = r.exec(q)) {
            hashParams[e[1]] = decodeURIComponent(e[2]);
         }
-        return setSpotifyAuth(hashParams);
+        return hashParams;
       }
+
+      const [spotifyAuth, setSpotifyAuth] = useState(getHashParams());
 
       useEffect(() => {
           if (spotifyAuth && spotifyAuth.access_token) {
