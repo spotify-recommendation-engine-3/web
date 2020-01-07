@@ -5,13 +5,7 @@ import spotifyWithAuth from './auth/spotifyWithAuth';
 const ArtistSearch = () => {
     const [artist, setArtist] = useState('');
     const [songs, setSongs] = useState([]);
-    const [artistSearch, setArtistSearch] = useState();
-
-    // useEffect(() => {
-    //     if (window.localStorage.getItem('spotifyAuthToken')) {
-    //         spotifyWebApi.setAccessToken(window.localStorage.getItem('spotifyAuthToken'))
-    //     }
-    // }, [])
+    const [userArtists, setUserArtists] = useState();
 
     const handleChanges = e => {
         setArtist(e.target.value);
