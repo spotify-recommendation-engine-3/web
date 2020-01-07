@@ -86,3 +86,10 @@ p {
   font-size: 1.6rem;
   line-height: 1.4;
 }
+header {
+  background-color: #FFFFFF;
+  padding: 3rem;
+}
+header h1 {
+  margin: 2rem;
+}
