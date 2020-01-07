@@ -9,26 +9,26 @@ import './App.css'
 
 function App() {
 
-  useEffect(() => {
-    if (localStorage.getItem('spotifyAuthToken')) {
-      const authObject = {
-        grant_type: "authorization_code",
-        code: localStorage.getItem('spotifyAuthToken'),
-        redirect_uri: 'http://localhost:3000/callback'
-      }
+  // useEffect(() => {
+  //   if (localStorage.getItem('spotifyAuthToken')) {
+  //     const authObject = {
+  //       grant_type: "authorization_code",
+  //       code: localStorage.getItem('spotifyAuthToken'),
+  //       redirect_uri: 'http://localhost:3000/callback'
+  //     }
 
-      const headerObject = {
-        headers: {
-          Autorization: Basic 
-        }
-      }
-      axios
-      .post('https://accounts.spotify.com/api/token', authObject, )
-      .then(response => {
+  //     const headerObject = {
+  //       headers: {
+  //         Autorization: Basic 
+  //       }
+  //     }
+  //     axios
+  //     .post('https://accounts.spotify.com/api/token', authObject, )
+  //     .then(response => {
         
-      })
-    }
-  }, [])
+  //     })
+  //   }
+  // }, [])
 
   return (
     <>
