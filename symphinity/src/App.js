@@ -36,16 +36,15 @@ function App() {
       {/* <Route exact to="/login" component={Login} /> */}
     {/* <Route exact to="/song-search" component={ArtistSearch} /> */}
     <Switch>
+        <Route exact path="/">
+          <UserArtists />
+        </Route>
         <Route exact path="/login">
           <Login />
         </Route>
         <Route path="/register">
           <Register /> 
         </Route>
-        <Route exact path="/">
-          <UserArtists />
-        </Route>
-
       </Switch>
     </>
   );
