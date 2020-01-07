@@ -65,7 +65,8 @@ html {
 html,
 body {
   font-family: 'Ubuntu', sans-serif;
-  color: #E5E9EC;
+  color: #FFFFFF;
+  background-color: #191414;
 }
 h1,
 h2,
@@ -73,7 +74,7 @@ h3,
 h4,
 h5 {
   font-family: 'Russo One', sans-serif;
-  color: #780150;
+  color: #1DB954;
 }
 h2 {
   font-size: 3.2rem;

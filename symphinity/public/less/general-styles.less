@@ -5,10 +5,9 @@
   @import url('https://fonts.googleapis.com/css?family=Russo+One|Ubuntu');
   @mainFont: 'Ubuntu', sans-serif;
   @headFont: 'Russo One', sans-serif;
-  @primeColor: #171330;
-  @accentColor: #EF019F;
-  @mainText:#E5E9EC;
-  @headColor: #780150;
+  @dayColor: #FFFFFF;
+  @nightColor: #191414;
+  @spotGreen: #1DB954;
   
   html {
     font-size: 62.5%;
@@ -17,12 +16,13 @@
   
   html, body {
     font-family: @mainFont;
-    color: @mainText;
+    color: @dayColor;
+    background-color: @nightColor;
   }
   
   h1, h2, h3, h4, h5 {
     font-family: @headFont;
-    color: @headColor;
+    color: @spotGreen;
   }
   
   h2 {
