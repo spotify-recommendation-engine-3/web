@@ -16,7 +16,7 @@ const UserArtists = () => {
         return hashParams;
       }
 
-      const [spotifyAuth, setSpotifyAuth] = useState(getHashParams());
+      const [spotifyAuth, setSpotifyAuth] = useState(getHashParams);
 
       useEffect(() => {
           if (spotifyAuth && spotifyAuth.access_token) {
