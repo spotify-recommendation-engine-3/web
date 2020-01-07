@@ -8,11 +8,13 @@ const RegisterWrapper = styled.div`
     margin: 0 auto;
     margin-top: 200px;
     padding: 30px;
+    background: #CFD8E6;
 `
 
-function Register () {
+function Register () { 
     return (
         <RegisterWrapper>
+            <Button color="secondary">Back</Button>
             <Form>
                 <FormGroup>
                     <Label for="exampleEmail">First Name</Label>

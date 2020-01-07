@@ -9,7 +9,8 @@ import Register from './components/registration/Register';
 import PrivateRoute from './components/auth/PrivateRoute';
 import SongSearch from './components/SongSearch';
 
-function App() {
+
+function App() { 
   return (
     <>
       {/* <Route exact to="/login" component={Login} /> */}
