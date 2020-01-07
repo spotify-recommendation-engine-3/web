@@ -1,21 +1,40 @@
-// Import dependencies and general
-import React from 'react';
+import React, { createContext, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import './App.css'
-
-// Import components
+import axios from 'axios';
+import PrivateRoute from './components/auth/PrivateRoute';
 import Login from './components/login/Login';
 import Register from './components/registration/Register';
-import PrivateRoute from './components/auth/PrivateRoute';
-import SongSearch from './components/SongSearch';
+import ArtistSearch from './components/ArtistSearch';
+import './App.css'
 
+function App() {
 
-function App() { 
+  useEffect(() => {
+    if (localStorage.getItem('spotifyAuthToken')) {
+      const authObject = {
+        grant_type: "authorization_code",
+        code: localStorage.getItem('spotifyAuthToken'),
+        redirect_uri: 'http://localhost:3000/callback'
+      }
+
+      const headerObject = {
+        headers: {
+          Autorization: Basic 
+        }
+      }
+      axios
+      .post('https://accounts.spotify.com/api/token', authObject, )
+      .then(response => {
+        
+      })
+    }
+  }, [])
+
   return (
     <>
       {/* <Route exact to="/login" component={Login} /> */}
-      {/* <PrivateRoute exact to="/song-search" component={SongSearch} /> */}
-      <Switch>
+    {/* <Route exact to="/song-search" component={ArtistSearch} /> */}
+    <Switch>
         <Route exact path="/">
           <Login />
         </Route>
