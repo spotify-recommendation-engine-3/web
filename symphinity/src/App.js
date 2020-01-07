@@ -1,7 +1,9 @@
 import React, { createContext, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import PrivateRoute from './components/auth/PrivateRoute';
+import Login from './components/login/Login';
+import Register from './components/registration/Register';
 import ArtistSearch from './components/ArtistSearch';
 import './App.css'
 
@@ -31,7 +33,16 @@ function App() {
   return (
     <>
       {/* <Route exact to="/login" component={Login} /> */}
-      <Route exact to="/song-search" component={ArtistSearch} />
+    {/* <Route exact to="/song-search" component={ArtistSearch} /> */}
+    <Switch>
+        <Route exact path="/">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register /> 
+        </Route>
+
+      </Switch>
     </>
   );
 }
