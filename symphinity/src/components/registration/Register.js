@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import styled from 'styled-components';
 
@@ -14,15 +15,17 @@ const RegisterWrapper = styled.div`
 function Register () { 
     return (
         <RegisterWrapper>
-            <Button color="secondary">Back</Button>
+            <Link to="/">
+                <Button color="secondary" style={{marginBottom: "3%"}}>Back</Button>
+            </Link>
             <Form>
                 <FormGroup>
-                    <Label for="exampleEmail">First Name</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="first name" />
+                    <Label for="firstName">First Name</Label>
+                    <Input type="text" name="name" id="firstName" placeholder="first name" />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="exampleEmail">Last Name</Label>
-                    <Input type="email" name="email" id="exampleEmail" placeholder="last name" />
+                    <Label for="lastName">Last Name</Label>
+                    <Input type="text" name="name" id="lastName" placeholder="last name" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
@@ -40,12 +43,6 @@ function Register () {
                     It's a bit lighter and easily wraps to a new line.
                     </FormText>
                 </FormGroup> */}
-                <FormGroup check>
-                    <Label check>
-                    <Input type="checkbox" />{' '}
-                        I have read and agree with the Term of Services
-                    </Label>
-                </FormGroup>
                 <Button color="primary">Submit</Button>
             </Form>
         </RegisterWrapper>
