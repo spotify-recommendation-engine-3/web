@@ -30,7 +30,7 @@ const UserArtists = () => {
             console.log(response);
         })
         .catch(err => console.log(err.response));
-    })
+    }, [spotifyAuth])
 
     return (
         <div>
