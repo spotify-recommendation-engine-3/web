@@ -14,7 +14,7 @@ const ArtistSearch = () => {
     const handleSubmit = e => {
         e.preventDefault();
         spotifyWithAuth()
-        .get(`/search?q=${artist}&type=artist,track&limit=5`)
+        .get(`/me/top/?q=${artist}&type=artist,track&limit=5`)
         .then(response => {
             console.log(response);
         })
