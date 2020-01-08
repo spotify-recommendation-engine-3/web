@@ -16,7 +16,7 @@ const UserArtists = () => {
     //     return hashParams;
     //   }
 
-    const [spotifyAuth, setSpotifyAuth] = useState(window.location.split('='));
+    const [spotifyAuth, setSpotifyAuth] = useState(window.location.hash.substring(1));
 
       useEffect(() => {
           if (spotifyAuth) {
