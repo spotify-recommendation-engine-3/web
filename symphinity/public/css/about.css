@@ -60,13 +60,14 @@ table {
 }
 html {
   font-size: 62.5%;
-  width: 100%;
+  max-width: 100%;
 }
 html,
 body {
   font-family: 'Ubuntu', sans-serif;
   color: #FFFFFF;
   background-color: #191414;
+  max-width: 100%;
 }
 h1,
 h2,
@@ -92,4 +93,10 @@ header {
 }
 header h1 {
   margin: 2rem;
+}
+#devs .box {
+  padding: 3%;
+}
+#devs .box .box1 h2 {
+  color: pink;
 }
