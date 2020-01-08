@@ -23,7 +23,7 @@ const UserArtists = () => {
             splitURL = window.location.search.split('=');
             setSpotifyAuth(splitURL[1]);
         }
-    }, [])
+    }, [window.location.search])
 
       useEffect(() => {
           if (spotifyAuth) {
