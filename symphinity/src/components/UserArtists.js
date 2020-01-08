@@ -19,8 +19,8 @@ const UserArtists = () => {
       const [spotifyAuth, setSpotifyAuth] = useState(getHashParams());
 
       useEffect(() => {
-          if (spotifyAuth && spotifyAuth.access_token) {
-              localStorage.setItem('spotifyAuthToken', spotifyAuth.access_token);
+          if (spotifyAuth) {
+              localStorage.setItem('spotifyAuthToken', spotifyAuth);
           }
       }, [spotifyAuth])
 
