@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.song-cards {
+  width: 250px;
+  height: 300px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
