@@ -25,20 +25,17 @@ const UserArtists = () => {
         }
     }, [window.location.search])
 
-      useEffect(() => {
-          if (spotifyAuth) {
-              localStorage.setItem('spotifyAuthToken', spotifyAuth);
-          }
-      }, [spotifyAuth])
-
     useEffect(() => {
-        spotifyWithAuth()
-        .get(`/me/top/artists`)
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => console.log(err.response));
-    }, [spotifyAuth])
+        if (spotifyAuth) {
+            localStorage.setItem('spotifyAuthToken', spotifyAuth);
+            spotifyWithAuth()
+            .get(`/me/top/artists`)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(err => console.log(err.response));
+        }
+      }, [spotifyAuth])
 
     return (
         <div>
