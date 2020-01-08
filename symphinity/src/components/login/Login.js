@@ -3,6 +3,7 @@ import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import UserArtists from '../UserArtists';
 
 
 const LoginContainer = styled.div`
@@ -66,6 +67,7 @@ function Login () {
                     <ButtonContainer className="button-container">
                         <Button color="success">LOG IN</Button>{' '}
                     </ButtonContainer>
+                    <UserArtists />
                 </Form>
             </LoginContainer>
 
