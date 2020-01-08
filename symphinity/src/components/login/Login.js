@@ -4,13 +4,8 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
 
-function Login () {
 
-    const [user, setUser] = useState({
-        username: '',
-        password: ''
-    })
-    const LoginContainer = styled.div`
+const LoginContainer = styled.div`
         border: 1px solid black;
         width: 25rem;
         margin: 0 auto;
@@ -32,6 +27,14 @@ function Login () {
         justify-content: space-around;
     `
 
+function Login () {
+
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    })
+    
+
     const handleSubmit = e => {
         e.preventDefault();
         axios
@@ -44,23 +47,21 @@ function Login () {
     }
 
     const handleChanges = e => {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        });
+        e.preventDefault();
+        setUser({...user, [e.target.name]: e.target.value });
     }
 
     return (
-        <LoginBackground classNam="login-background">
+        <LoginBackground className="login-background">
             <LoginContainer className="login-container">
                 <Form onSubmit={handleSubmit}>
                     <FormGroup>
                         <Label for="username">Username</Label>
-                        <Input type="text" value={user.password} onChange={handleChanges} name="username" id="username" placeholder="Username" />
+                        <Input type="text" name="username" id="username" placeholder="username" onChange={handleChanges} value={user.username} />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="password">Password</Label>
-                        <Input type="password" onChange={handleChanges} value={user.password} name="password" id="password" placeholder="Password" />
+                        <Label for="examplePassword">Password</Label>
+                        <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
                     </FormGroup>
                     <ButtonContainer className="button-container">
                         <Button color="success">LOG IN</Button>{' '}
