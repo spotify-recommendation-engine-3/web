@@ -3,6 +3,8 @@ import {
     Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const SongCards = (props) => {
 
@@ -14,6 +16,8 @@ const SongCards = (props) => {
                 <CardTitle>{props.songName}</CardTitle>
                 <CardSubtitle>{props.artistName}</CardSubtitle>
                 <a href={props.songURL}><Button>Listen on Spotify</Button></a>
+                <button><FontAwesomeIcon icon={faHeart} /></button>
+                <button><FontAwesomeIcon icon={['fas', faHeart]} /></button>
                 </CardBody>
             </Card>
         </div>
