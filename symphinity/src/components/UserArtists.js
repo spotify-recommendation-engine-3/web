@@ -23,6 +23,7 @@ const UserArtists = () => {
             .get(`/me/top/tracks`)
             .then(response => {
                 setSongs(response.data.items)
+                console.log(response.data.items);
             })
             .catch(err => console.log(err.response));
         }
