@@ -12,7 +12,7 @@ function App() {
 
   // useEffect(() => {
   //   if (localStorage.getItem('spotifyAuthToken')) {
-  //     const authObject = {
+  //     const authObject = { 
   //       grant_type: "authorization_code",
   //       code: localStorage.getItem('spotifyAuthToken'),
   //       redirect_uri: 'http://localhost:3000/callback'

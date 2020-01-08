@@ -20,12 +20,8 @@ function Register () {
             </Link>
             <Form>
                 <FormGroup>
-                    <Label for="firstName">First Name</Label>
-                    <Input type="text" name="name" id="firstName" placeholder="first name" />
-                </FormGroup>
-                <FormGroup>
-                    <Label for="lastName">Last Name</Label>
-                    <Input type="text" name="name" id="lastName" placeholder="last name" />
+                    <Label for="username">Username</Label>
+                    <Input type="text" name="name" id="username" placeholder="username" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="exampleEmail">Email</Label>
@@ -35,15 +31,7 @@ function Register () {
                     <Label for="examplePassword">Password</Label>
                     <Input type="password" name="password" id="examplePassword" placeholder="password" />
                 </FormGroup>
-                {/* <FormGroup>
-                    <Label for="exampleFile">Upload a Profile Image</Label>
-                    <Input type="file" name="file" id="exampleFile" />
-                    <FormText color="muted">
-                    This is some placeholder block-level help text for the above input.
-                    It's a bit lighter and easily wraps to a new line.
-                    </FormText>
-                </FormGroup> */}
-                <Button color="primary">Submit</Button>
+                <Button color="primary">Create Account</Button>
             </Form>
         </RegisterWrapper>
     )
