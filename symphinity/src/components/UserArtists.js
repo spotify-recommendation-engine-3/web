@@ -29,7 +29,7 @@ const UserArtists = () => {
         if (spotifyAuth) {
             localStorage.setItem('spotifyAuthToken', spotifyAuth);
             spotifyWithAuth()
-            .get(`/me/top?tracks`)
+            .get(`/me/top/?type=tracks`)
             .then(response => {
                 console.log(response);
             })
