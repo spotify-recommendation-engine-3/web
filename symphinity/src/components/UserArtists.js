@@ -8,40 +8,6 @@ const UserArtists = () => {
     const [songs, setSongs] = useState([]);
     const [userInfo, setUserInfo] = useState();
     const [spotifyAuth, setSpotifyAuth] = useState();
-
-    // const handleLike = async e => {
-    //     e.preventDefault();
-    //     const user = JSON.parse(localStorage.getItem('user'));
-    //     if (!user) return;
-    //     const { data } = await axiosWithAuth().post(`/likes/${match.params.id}`, {
-    //       userId: user.id,
-    //     });
-    //     setItemData({
-    //       ...itemData,
-    //       likes: data,
-    //     });
-    //     setLiked(true);
-    //   };
-    
-    //   const handleUnlike = async e => {
-    //     e.preventDefault();
-    //     const user = JSON.parse(localStorage.getItem('user'));
-    //     if (!user) return;
-    //     console.log(match.params.id, user.id);
-    //     const { data } = await axiosWithAuth().delete(
-    //       `/likes/${match.params.id}/${user.id}`
-    //     );
-    //     setItemData({
-    //       ...itemData,
-    //       likes: data.remaining,
-    //     });
-    //     setLiked(false);
-    //   };
-
-    // useEffect(() => {
-    //     axiosWithAuth()
-
-    // })
     
     useEffect(() => {
         if (window.location.search) {
@@ -67,7 +33,7 @@ const UserArtists = () => {
             <SpotifyAuth />
             <div className='cards'>
                 {songs.map(element => {
-                    return <SongCards key={element.id} id={element.id} songName={element.name} songURL={element.uri} artistName={element.album.artists[0].name} artistURL={element.album.artists[0].uri} albumName={element.album.name} image={element.album.images[0].url} like={handleLike} unlike={handleUnlike} />
+                    return <SongCards key={element.id} id={element.id} songName={element.name} songURL={element.uri} artistName={element.album.artists[0].name} artistURL={element.album.artists[0].uri} albumName={element.album.name} image={element.album.images[0].url} />
                 })}
             </div>
         </div>

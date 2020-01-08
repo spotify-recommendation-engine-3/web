@@ -21,24 +21,3 @@ const SongCards = (props) => {
 }
 
 export default SongCards;
-
-        <p>
-            Liked&nbsp;
-            <strong>{itemData.likes.length}</strong>
-            &nbsp;times
-          </p>
-          {!liked ? (
-            <button type="button" className="button like" onClick={handleLike}>
-              Like&nbsp;
-              <i className="far fa-heart" />
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="button liked"
-              onClick={handleUnlike}
-            >
-              Liked&nbsp;
-              <i className="fas fa-heart" />
-            </button>
-          )}
