@@ -55,7 +55,7 @@ function Login () {
         <LoginBackground className="login-background">
             <LoginContainer className="login-container">
                 <Form onSubmit={handleSubmit}>
-                    <FormGroup>
+                    <FormGroup>   
                         <Label for="username">Username</Label>
                         <Input type="text" name="username" id="username" placeholder="username" onChange={handleChanges} value={user.username} />
                     </FormGroup>
