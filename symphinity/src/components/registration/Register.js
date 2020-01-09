@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import styled from 'styled-components';
 import axios from 'axios';
+import logo from './logo.jpg';
+import '../../App.css';
 
 
 const RegisterWrapper = styled.div`
@@ -13,6 +15,9 @@ const RegisterWrapper = styled.div`
     padding: 30px;
     background: #CFD8E6;
 `
+const Image = styled.div`
+        margin-bottom:5%;
+    `
 
 function Register () { 
 
@@ -36,6 +41,7 @@ function Register () {
         } )
         .then(function (response) {
             console.log(response);
+            localStorage.setItem('user', response);
         })
         .catch(function (error) {
             console.log(error);
@@ -49,6 +55,9 @@ function Register () {
 
     return (
         <RegisterWrapper>
+            <Image>
+                <img style={{maxWidth: '333px'}} src={require('./logo.jpg')}/>
+            </Image>
             <Link to="/">
                 <Button color="secondary" style={{marginBottom: "3%"}}>Back</Button>
             </Link>
@@ -65,7 +74,7 @@ function Register () {
                     <Label for="examplePassword">Password</Label>
                     <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
                 </FormGroup>
-                <Button color="primary">Create Account</Button>
+                <Button className="create-account" color="primary">Create Account</Button>
             </Form>
         </RegisterWrapper>
     )
