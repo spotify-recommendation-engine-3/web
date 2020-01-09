@@ -40,9 +40,50 @@
 .song-cards {
   width: 250px;
   height: 300px;
+  margin: 10px;
 }
 
 .cards {
   display: flex;
   flex-wrap: wrap;
+}
+
+.fav-button {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 50px;
+  padding: 5px;
+  font-size: 0.9rem;
+  transition: 0.5s;
+  border: 2px solid #eb6a79;
+  margin: 10px 5px;
+}
+.favorite {
+  background-color: white;
+  color: #eb6a79;
+}
+
+.favorite:hover {
+  background-color: #eb6a79;
+  color: white;
+}
+
+.favorited {
+  background-color: #eb6a79;
+  color: white;
+  border: 2px solid white;
+}
+
+.favorited:hover {
+  background-color: white;
+  color: #eb6a79;
+}
+
+.song-cards p {
+  font-size: 12px;
+  margin: 2px;
+}
+
+.song-cards h3 {
+  font-size: 14px;
 }

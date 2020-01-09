@@ -5,16 +5,11 @@ const SpotifyAuth = () => {
     
 
     return (
-        <div>
-            {/* {console.log(spotifyAuth)} */}
-            {localStorage.getItem('spotifyAuthToken') ? <p>Spotify Account Linked!</p> 
-            :
-            <> 
-            <a href='https://oauth-spotify-backend.herokuapp.com/login'>
+        <div> 
+            <a href='http://localhost:8888/login'> 
                 <button>Login with Spotify</button>
             </a>
             <p>Please Link Your Spotify Account</p>
-            </>}
         </div>
     )
 }
