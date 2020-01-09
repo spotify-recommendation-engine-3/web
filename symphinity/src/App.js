@@ -8,6 +8,8 @@ import ArtistSearch from './components/ArtistSearch';
 import './App.css'
 import UserArtists from './components/UserArtists';
 
+
+
 function App() {
 
   // useEffect(() => {
@@ -37,13 +39,8 @@ function App() {
     {/* <Route exact to="/song-search" component={ArtistSearch} /> */}
     <Switch>
         <Route exact path="/">
-          <UserArtists />
-          {/* changed this line */}
           <Login />
         </Route>
-        {/* <Route exact path="/login">
-          <Login />
-        </Route> */}
         <Route path="/register">
           <Register /> 
         </Route>

@@ -13,11 +13,11 @@ const SongCards = (props) => {
             <Card>
                 <CardImg top width="300px" height="150px" src={props.image} alt="album image" />
                 <CardBody>
-                <CardTitle>{props.songName}</CardTitle>
-                <CardSubtitle>{props.artistName}</CardSubtitle>
-                <a href={props.songURL}><Button>Listen on Spotify</Button></a>
-                <button><FontAwesomeIcon icon={faHeart} /></button>
-                <button><FontAwesomeIcon icon={['fas', faHeart]} /></button>
+                    <CardTitle>{props.songName}</CardTitle>
+                    <CardSubtitle>{props.artistName}</CardSubtitle>
+                    <a href={props.songURL}><Button>Listen on Spotify</Button></a>
+                    <button><FontAwesomeIcon icon={faHeart} /></button>
+                    <button><FontAwesomeIcon icon={['fas', faHeart]} /></button>
                 </CardBody>
             </Card>
         </div>
