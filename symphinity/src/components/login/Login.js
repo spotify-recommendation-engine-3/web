@@ -3,6 +3,9 @@ import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import UserArtists from '../UserArtists';
+import logo from './logo.jpg';
+import '../../App.css';
 
 
 const LoginContainer = styled.div`
@@ -25,6 +28,16 @@ const LoginContainer = styled.div`
     const ButtonContainer = styled.div`
         display: flex;
         justify-content: space-around;
+    `
+
+    const Spotify = styled.div`
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 3%;
+    `
+
+    const Image = styled.div`
+        margin-bottom:5%;
     `
 
 function Login () {
@@ -53,29 +66,36 @@ function Login () {
     }
 
     return (
-        <LoginBackground className="login-background">
-            <LoginContainer className="login-container">
-                <Form onSubmit={handleSubmit}>
-                    <FormGroup>
-                        <Label for="username">Username</Label>
-                        <Input type="text" name="username" id="username" placeholder="username" onChange={handleChanges} value={user.username} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label for="examplePassword">Password</Label>
-                        <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
-                    </FormGroup>
-                    <ButtonContainer className="button-container">
-                        <Button color="success">LOG IN</Button>{' '}
+        <>
+            <LoginBackground className="login-background">
+                <LoginContainer className="login-container">
+                    <Image>
+                        <img style={{maxWidth: '333px'}} src={require('./logo.jpg')}/>
+                    </Image>
+                    <Form onSubmit={handleSubmit}>
+                        <FormGroup>   
+                            <Label for="username">Username</Label>
+                            <Input type="text" name="username" id="username" placeholder="username" onChange={handleChanges} value={user.username} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="examplePassword">Password</Label>
+                            <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
+                        </FormGroup>
+                        <ButtonContainer className="button-container"> 
+                            <Button className="login-btn"color="success">LOG IN</Button>{' '}
+                        </ButtonContainer>
+                    </Form>
+                </LoginContainer>
+                    <Spotify>
+                        <UserArtists />
+                    </Spotify>
+                    <ButtonContainer>
+                        <Link to="/register">
+                            <Button className="register-btn" color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>REGISTER</Button>{' '}
+                        </Link>
                     </ButtonContainer>
-                </Form>
-            </LoginContainer>
-
-            <Link to="/register">
-                <ButtonContainer>
-                    <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>REGISTER</Button>{' '}
-                </ButtonContainer>
-            </Link>
-        </LoginBackground>
+            </LoginBackground>
+        </>
     )
 }
 

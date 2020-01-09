@@ -48,6 +48,27 @@
   flex-wrap: wrap;
 }
 
+/* LOGIN COMPONENT */
+.login-btn:hover{
+  transform: scale(1.1, 1.2);
+  transition: transform 200ms ease-in-out;
+}
+
+.register-btn:hover{
+  transform: scale(1.1, 1.2);
+  transition: transform 200ms ease-in-out;
+}
+
+.spotify-login:hover{
+  transform: scale(1.1, 1.2);
+  transition: transform 200ms ease-in-out;
+}
+
+.create-account:hover{
+  transform: scale(1.1, 1.2);
+  transition: transform 200ms ease-in-out;
+}
+
 .fav-button {
   cursor: pointer;
   border-radius: 5px;
