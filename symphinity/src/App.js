@@ -38,12 +38,10 @@ function App() {
     <Switch>
         <Route exact path="/">
           <UserArtists />
-          {/* changed this line */}
+        </Route>
+        <Route exact path="/login">
           <Login />
         </Route>
-        {/* <Route exact path="/login">
-          <Login />
-        </Route> */}
         <Route path="/register">
           <Register /> 
         </Route>
