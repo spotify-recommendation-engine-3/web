@@ -11,17 +11,11 @@ import '../../App.css';
 
 const SpotifyAuth = () => {
     return (
-        <div>
-            {/* {console.log(spotifyAuth)} */}
-            {localStorage.getItem('spotifyAuthToken') ? <p>Spotify Account Linked!</p> 
-            :
-            <> 
-            <span style={{marginRight:"2%"}}>or</span>
-            <a href='https://oauth-spotify-backend.herokuapp.com/login'>
-                <Button className="spotify-login" color="success">Login with Spotify</Button>
+        <div> 
+            <a href='http://localhost:8888/login'> 
+                <button>Login with Spotify</button>
             </a>
-            {/* <p>Please Link Your Spotify Account</p> */}
-            </>}
+            <p>Please Link Your Spotify Account</p>
         </div>
     )
 }

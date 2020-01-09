@@ -41,6 +41,7 @@ function Register () {
         } )
         .then(function (response) {
             console.log(response);
+            localStorage.setItem('user', response);
         })
         .catch(function (error) {
             console.log(error);

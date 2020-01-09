@@ -54,7 +54,8 @@ function Login () {
         .post('https://spotify-song-suggestor-be.herokuapp.com/api/auth/login', user)
         .then(response => {
             localStorage.setItem('token', response.data.token);
-            alert('Yay! Logged In!')
+            localStorage.setItem('user_id', response.data.user_id)
+            console.log(response);
         })
         .catch(err => console.log(err.response));
     }
