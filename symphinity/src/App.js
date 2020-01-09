@@ -35,9 +35,6 @@ function App() {
     <>
     <Switch>
       <Route exact path="/">
-        <UserArtists />
-      </Route>
-      <Route exact path="/login">
         <Login />
       </Route>
       <Route path="/register">
