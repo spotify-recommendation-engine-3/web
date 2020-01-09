@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import {Button} from 'reactstrap';
+import '../../App.css';
 
 
 // const Button = styled.button`
@@ -17,7 +18,7 @@ const SpotifyAuth = () => {
             <> 
             <span style={{marginRight:"2%"}}>or</span>
             <a href='https://oauth-spotify-backend.herokuapp.com/login'>
-                <Button color="success">Login with Spotify</Button>
+                <Button className="spotify-login" color="success">Login with Spotify</Button>
             </a>
             {/* <p>Please Link Your Spotify Account</p> */}
             </>}

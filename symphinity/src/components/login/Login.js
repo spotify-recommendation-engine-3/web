@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import UserArtists from '../UserArtists';
 import logo from './logo.jpg';
+import '../../App.css';
 
 
 const LoginContainer = styled.div`
@@ -80,7 +81,7 @@ function Login () {
                             <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
                         </FormGroup>
                         <ButtonContainer className="button-container"> 
-                            <Button color="success">LOG IN</Button>{' '}
+                            <Button className="login-btn"color="success">LOG IN</Button>{' '}
                         </ButtonContainer>
                     </Form>
                 </LoginContainer>
@@ -89,7 +90,7 @@ function Login () {
                     </Spotify>
                     <ButtonContainer>
                         <Link to="/register">
-                            <Button color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>REGISTER</Button>{' '}
+                            <Button className="register-btn" color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>REGISTER</Button>{' '}
                         </Link>
                     </ButtonContainer>
             </LoginBackground>

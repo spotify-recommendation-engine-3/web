@@ -4,6 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import styled from 'styled-components';
 import axios from 'axios';
 import logo from './logo.jpg';
+import '../../App.css';
 
 
 const RegisterWrapper = styled.div`
@@ -72,7 +73,7 @@ function Register () {
                     <Label for="examplePassword">Password</Label>
                     <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
                 </FormGroup>
-                <Button color="primary">Create Account</Button>
+                <Button className="create-account" color="primary">Create Account</Button>
             </Form>
         </RegisterWrapper>
     )
