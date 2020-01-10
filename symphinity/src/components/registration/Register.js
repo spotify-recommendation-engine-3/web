@@ -19,7 +19,7 @@ const Image = styled.div`
         margin-bottom:5%;
     `
 
-function Register () { 
+function Register (props) { 
 
     const [user, setUser] = useState(
         {
@@ -41,6 +41,7 @@ function Register () {
         .then(function (response) {
             console.log(response);
             localStorage.setItem('user', response);
+            props.history.push('/login')
         })
         .catch(function (error) {
             console.log(error);

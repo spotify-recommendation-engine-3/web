@@ -1,6 +1,5 @@
-import React, { createContext, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import axios from 'axios';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import PrivateRoute from './components/auth/PrivateRoute';
 import Login from './components/login/Login';
 import Register from './components/registration/Register';
