@@ -11,6 +11,7 @@ const SingleSong = (props) => {
     const [features, setFeatures] = useState([]);
     const [graphImage, setGraphImage] = useState();
     const [suggestions, setSuggestions] = useState([]);
+    const duration = song && song.duration_ms
 
     const [sendObject, setSendObject] = useState({
         artist_name: "", 
@@ -96,6 +97,17 @@ const SingleSong = (props) => {
         .catch(err => console.log(err))
     }
 
+    const msToTime = (duration) => {
+        var milliseconds = parseInt((duration % 1000) / 100),
+          seconds = Math.floor((duration / 1000) % 60),
+          minutes = Math.floor((duration / (1000 * 60)) % 60);
+      
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+      
+        return minutes + ":" + seconds;
+      }
+
     return (
         <>      
         {song.artists && features
@@ -104,8 +116,10 @@ const SingleSong = (props) => {
                 <div className='song-details'>
                     <h3>{song.name}</h3>
                     <h4><span>by </span>{song.album.artists[0].name}</h4>
+                    <p>Duration: {msToTime(duration)}</p>
                 </div>
                 <button type='submit' onClick={flaskSend}>Get Recommendations</button>
+                {suggestions.length === 0 ? <p>⇧⇧Click here for recommendations⇧⇧</p> : null}
             </div>
             <div className='sugg-container'>
                 <div className='suggestions'>

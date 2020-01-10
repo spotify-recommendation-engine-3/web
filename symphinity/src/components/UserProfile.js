@@ -25,11 +25,13 @@ const UserProfile = () => {
     }, []);
 
     return (
+        <>
+        <h2 style={{margin: '5%'}}>Choose a song to get some song recommendations based on that song.</h2>
         <div className='cards'>
             {favorites.map(element => {
                 return <FavoriteCards key={element.id} id={element.id} songName={element.name} album={element.album.name} artist={element.artists[0].name} duration={element.duration_ms} link={element.uri} image={element.album.images[1].url} />
             })}
-        </div>
+        </div></>
     )
 }
 

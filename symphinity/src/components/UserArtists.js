@@ -42,11 +42,12 @@ const UserArtists = () => {
     return (
         <div className='user-artists'>
             {songs.length > 0
-            ?   <div className='cards'>
+            ?   <> <h2>Mark some of your songs as favorites below <span>then click <a href='/userprofile'>here</a></span></h2>
+                <div className='cards'>
                     {songs.map(element => {
                         return <SongCards key={element.id} id={element.id} songName={element.name} songURL={element.uri} artistName={element.album.artists[0].name} artistURL={element.album.artists[0].uri} albumName={element.album.name} image={element.album.images[0].url} faved={faved} setFaved={setFaved} />
                 })}
-                </div>
+                </div></>
             : <SpotifyAuth />}
         </div>
     )

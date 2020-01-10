@@ -40,7 +40,7 @@ const LoginContainer = styled.div`
         margin-bottom:5%;
     `
 
-function Login () {
+function Login (props) {
 
     const [user, setUser] = useState({
         username: '',
