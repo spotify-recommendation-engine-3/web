@@ -16,11 +16,11 @@ function App() {
   return (
     <div className='main-container'>
       {/* <Header /> */}
-        <PrivateRoute exact path="/" component={UserArtists} />
+        <Route exact path="/" component={UserArtists} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <PrivateRoute exact path="/userprofile" component={UserProfile} />
-        <PrivateRoute exact path="/:songID" component={SingleSong} />
+        <Route exact path="/userprofile" component={UserProfile} />
+        <Route exact path="/:songID" component={SingleSong} />
     </div>
   );
 }

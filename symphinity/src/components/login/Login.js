@@ -6,6 +6,7 @@ import axios from 'axios';
 import UserArtists from '../UserArtists';
 import logo from './logo.jpg';
 import '../../App.css';
+import SpotifyAuth from '../auth/SpotifyAuth';
 
 
 const LoginContainer = styled.div`
@@ -87,7 +88,7 @@ function Login (props) {
                     </Form>
                 </LoginContainer>
                     <Spotify>
-                        <UserArtists />
+                        <SpotifyAuth />
                     </Spotify>
                     <ButtonContainer>
                         <Link to="/register">
