@@ -37,6 +37,7 @@ const SongCards = (props) => {
 
     return (
         <div className='song-cards'>
+            {console.log(props.faved)}
             <Card>
                 <CardImg top width="300px" height="180px" src={props.image} alt="album image" />
                 <CardBody>
