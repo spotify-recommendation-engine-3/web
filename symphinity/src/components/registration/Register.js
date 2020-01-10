@@ -21,13 +21,12 @@ const Image = styled.div`
 
 function Register () { 
 
-    const [user, setUser] = useState([ 
+    const [user, setUser] = useState(
         {
             username: '',
             email: '',
             password: ''
-        }
-    ]); 
+        }); 
 
     const submitForm = e => { 
         e.preventDefault();
@@ -74,7 +73,7 @@ function Register () {
                     <Label for="examplePassword">Password</Label>
                     <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
                 </FormGroup>
-                <Button className="create-account" color="primary">Create Account</Button>
+                <Button type='submit' className="create-account" color="primary">Create Account</Button>
             </Form>
         </RegisterWrapper>
     )
