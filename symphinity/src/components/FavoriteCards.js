@@ -7,10 +7,6 @@ import { Link } from 'react-router-dom';
 
 const FavoriteCards = (props) => {
 
-    const pushTo = () => {
-        props.history.push(props.link)
-    }
-
     return (
         <div className='song-cards'>
             <Link to={{ pathname: `/${props.id}`, state: {id: props.id}}}>
@@ -20,7 +16,8 @@ const FavoriteCards = (props) => {
                         <CardTitle><h3>{props.songName}</h3></CardTitle>
                         <CardSubtitle><p>by {props.artist}</p></CardSubtitle>
                         <CardSubtitle><p>on {props.album}</p></CardSubtitle>
-                        <Button onClick={pushTo}>Listen on Spotify</Button>
+                        <Button onClick={props.link}>Listen on Spotify</Button>
+                        {/* <Button tag={Link} to="/somewhere" /> */}
                         {/* <a href={props.link}><Button>Listen on Spotify</Button></a> */}
                     </CardBody>
                 </Card>
