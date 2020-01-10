@@ -16,7 +16,6 @@ function App() {
   return (
     <div className='main-container'>
       {/* <Header /> */}
-      <Switch>
         <PrivateRoute exact path="/">
           <UserArtists />
         </PrivateRoute>
@@ -28,7 +27,6 @@ function App() {
         </Route>
         <PrivateRoute exact path="/userprofile" component={UserProfile} />
         <PrivateRoute exact path="/:songID" component={SingleSong} />
-      </Switch>
     </div>
   );
 }
