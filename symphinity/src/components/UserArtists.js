@@ -48,7 +48,7 @@ const UserArtists = () => {
                         return <SongCards key={element.id} id={element.id} songName={element.name} songURL={element.uri} artistName={element.album.artists[0].name} artistURL={element.album.artists[0].uri} albumName={element.album.name} image={element.album.images[0].url} faved={faved} setFaved={setFaved} />
                 })}
                 </div></>
-            : <h2>Please login <a href='/login'>here</a>.</h2>}
+            : <h2>Please Register <a href='/register'>here</a>.</h2>}
         </div>
     )
 }
