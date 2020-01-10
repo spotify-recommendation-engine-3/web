@@ -108,3 +108,57 @@
 .song-cards h3 {
   font-size: 14px;
 }
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.user-artists {
+  margin: auto;
+}
+
+.suggestions {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
+}
+
+.sugg-cards {
+  width: 200px;
+  margin: 5px;
+  height: 100px;
+}
+
+.rec-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+}
+
+.song-info {
+  display: flex;
+  flex-direction: column;
+  /* width: 80%; */
+  margin: 2%;
+}
+
+.song-image {
+  border-radius: 10px;
+}
+
+.song-details {
+  text-align: center;
+}
+
+.sugg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.graph {
+  margin: auto;
+}

@@ -5,9 +5,8 @@ const SpotifyAuth = () => {
     return (
         <div>
             <a href='http://localhost:8888/login'>
-                <button>Login with Spotify</button>
+                <button>Link your <i className="fab fa-spotify"></i></button>
             </a>
-            <p>Please Link Your Spotify Account</p>
         </div>
     )
 }

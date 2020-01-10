@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import spotifyWithAuth from './auth/spotifyWithAuth';
 import axios from 'axios';
+import Recommendations from './Recommendations';
 
 const SingleSong = (props) => {
 
@@ -9,6 +10,7 @@ const SingleSong = (props) => {
     const [song, setSong] = useState([]);
     const [features, setFeatures] = useState([]);
     const [graphImage, setGraphImage] = useState();
+    const [suggestions, setSuggestions] = useState([]);
 
     const [sendObject, setSendObject] = useState({
         artist_name: "", 
@@ -74,6 +76,11 @@ const SingleSong = (props) => {
     const flaskSend = () => {
         axios.post('https://spotify-flask-model.herokuapp.com/pred', sendObject)
         .then(response => {
+            Object.values(response.data).forEach((element, index) => {
+                if (index < 10) {
+                    setSuggestions((prev) => [...prev, element]);
+                }
+            })
             const string = response.data[10]
             const byteCharacters = atob(string.slice(2, string.length - 1))
             const byteNumbers = new Array(byteCharacters.length)
@@ -90,16 +97,27 @@ const SingleSong = (props) => {
     }
 
     return (
-        <>
-        {console.log(song)}
-        {console.log(features)}
+        <>      
         {song.artists && features
-        ? <div>
-            <img src={song.album.images[1].url} alt='album image' />
-            <h2>{song.album.artists[0].name}</h2>
-            {graphImage && <img src={graphImage} alt='ds graph image'/>}
-            <button type='submit' onClick={flaskSend}>Get Recommendations</button>
-        </div>
+        ? <> <div className='song-info'>
+                <img className='song-image' src={song.album.images[1].url} alt='album image' />
+                <div className='song-details'>
+                    <h3>{song.name}</h3>
+                    <h4><span>by </span>{song.album.artists[0].name}</h4>
+                </div>
+                <button type='submit' onClick={flaskSend}>Get Recommendations</button>
+            </div>
+            <div className='sugg-container'>
+                <div className='suggestions'>
+                    {suggestions && suggestions.map(element => {
+                    return <Recommendations artist={element.artist_name} song={element.track_name} key={element.track_id} id={element.track_id} />
+                    }) }
+                </div>
+                <div className='graph'>
+                    {graphImage && <img width='500px' height='500px' src={graphImage} alt='ds graph image'/>}
+                </div>
+            </div>
+            </>
         : <p>No Data Yet!</p>}
         </>
     )

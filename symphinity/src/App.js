@@ -9,11 +9,13 @@ import './App.css'
 import UserArtists from './components/UserArtists';
 import UserProfile from "./components/UserProfile";
 import SingleSong from './components/SingleSong';
+import Header from './components/Header';
 
 function App() {
 
   return (
-    <>
+    <div className='main-container'>
+      {/* <Header /> */}
       <Switch>
         <PrivateRoute exact path="/">
           <UserArtists />
@@ -27,7 +29,7 @@ function App() {
         <PrivateRoute exact path="/userprofile" component={UserProfile} />
         <PrivateRoute exact path="/:songID" component={SingleSong} />
       </Switch>
-    </>
+    </div>
   );
 }
 
