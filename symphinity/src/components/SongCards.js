@@ -29,6 +29,7 @@ const SongCards = (props) => {
         .delete(`/api/faves/${localStorage.getItem('user_id')}/${e.target.id}`)
         .then(response => {
             console.log('Favorite removed')
+            console.log(response);
         })
         .catch(err => console.log(err.response));
         props.setFaved(props.faved.filter(element => element !== e.currentTarget.id));

@@ -7,44 +7,29 @@ import Register from './components/registration/Register';
 import ArtistSearch from './components/ArtistSearch';
 import './App.css'
 import UserArtists from './components/UserArtists';
+import UserProfile from "./components/UserProfile";
+import SingleSong from './components/SingleSong';
+import Header from './components/Header';
 
 function App() {
 
-  // useEffect(() => {
-  //   if (localStorage.getItem('spotifyAuthToken')) {
-  //     const authObject = { 
-  //       grant_type: "authorization_code",
-  //       code: localStorage.getItem('spotifyAuthToken'),
-  //       redirect_uri: 'http://localhost:3000/callback'
-  //     }
-
-  //     const headerObject = {
-  //       headers: {
-  //         Autorization: Basic 
-  //       }
-  //     }
-  //     axios
-  //     .post('https://accounts.spotify.com/api/token', authObject, )
-  //     .then(response => {
-        
-  //     })
-  //   }
-  // }, [])
-
   return (
-    <>
-    <Switch>
-      <Route exact path="/">
-        <UserArtists />
-      </Route>
-      <Route exact path="/login">
-        <Login />
-      </Route>
-      <Route path="/register">
-        <Register /> 
-      </Route>
-    </Switch>
-    </>
+    <div className='main-container'>
+      {/* <Header /> */}
+      <Switch>
+        <PrivateRoute exact path="/">
+          <UserArtists />
+        </PrivateRoute>
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register /> 
+        </Route>
+        <PrivateRoute exact path="/userprofile" component={UserProfile} />
+        <PrivateRoute exact path="/:songID" component={SingleSong} />
+      </Switch>
+    </div>
   );
 }
 
