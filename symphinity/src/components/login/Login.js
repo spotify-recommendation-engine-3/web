@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import axios from 'axios';
-import UserArtists from '../UserArtists';
-import logo from './logo.jpg';
+import logo from '../../images/logo.png';
 import '../../App.css';
-import SpotifyAuth from '../auth/SpotifyAuth';
 
 
 const LoginContainer = styled.div`
         border: 1px solid black;
         width: 25rem;
         margin: 0 auto;
-        margin-top: 200px;
+        margin-top: 50px;
         padding: 30px;        
     `
 
@@ -28,7 +25,6 @@ const LoginContainer = styled.div`
 
     const ButtonContainer = styled.div`
         display: flex;
-        justify-content: space-around;
     `
 
     const Spotify = styled.div`
@@ -57,7 +53,11 @@ function Login (props) {
             localStorage.setItem('token', response.data.token);
             localStorage.setItem('user_id', response.data.user_id)
             console.log(response);
-            alert('Logged In.')
+            alert('Logged In. Please Link your Spotify Account.')
+            setUser({
+                username: '',
+                password: ''
+            })
         })
         .catch(err => console.log(err.response));
     }
@@ -72,7 +72,7 @@ function Login (props) {
             <LoginBackground className="login-background">
                 <LoginContainer className="login-container">
                     <Image>
-                        <img style={{maxWidth: '333px'}} src={require('./logo.jpg')}/>
+                        <img alt='logo' style={{maxWidth: '333px'}} src={logo}/>
                     </Image>
                     <Form onSubmit={handleSubmit}>
                         <FormGroup>   
@@ -83,19 +83,24 @@ function Login (props) {
                             <Label for="examplePassword">Password</Label>
                             <Input type="password" name="password" id="examplePassword" placeholder="password" onChange={handleChanges} value={user.password}/>
                         </FormGroup>
-                        <ButtonContainer className="button-container"> 
-                            <Button className="login-btn"color="success">LOG IN</Button>{' '}
-                        </ButtonContainer>
+                        <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
+                            <ButtonContainer className="button-container"> 
+                                <Button className="login-btn"color="success">LOG IN</Button>{' '}
+                            </ButtonContainer>
+                            <ButtonContainer className="button-container"> 
+                                <a href='http://localhost:8888/login'>
+                                    <button type='button'>Link your <i className="fab fa-spotify"></i></button>
+                                </a>
+                            </ButtonContainer>
+                        </div>
+                            {/* <a href='http://localhost:8888/login'>
+                                <button>Link your <i className="fab fa-spotify"></i></button>
+                            </a>  */}
+                            {/* <Link to="/register">
+                                <Button className="register-btn" color="primary" style={{margin: "0 auto", width: "100px"}}>REGISTER</Button>{' '}
+                            </Link> */}
                     </Form>
                 </LoginContainer>
-                    <Spotify>
-                        <SpotifyAuth />
-                    </Spotify>
-                    <ButtonContainer>
-                        <Link to="/register">
-                            <Button className="register-btn" color="primary" style={{margin: "0 auto",marginTop:"30px", width: "100px"}}>REGISTER</Button>{' '}
-                        </Link>
-                    </ButtonContainer>
             </LoginBackground>
         </>
     )

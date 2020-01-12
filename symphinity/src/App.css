@@ -112,7 +112,7 @@
 .main-container {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 90%;
 }
 
 .user-artists {
@@ -161,4 +161,8 @@
 
 .graph {
   margin: auto;
+}
+
+.items-in-nav {
+  margin: 0 5px;
 }
