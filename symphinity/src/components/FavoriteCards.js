@@ -9,19 +9,19 @@ const FavoriteCards = (props) => {
 
     return (
         <div className='song-cards'>
-            <Link to={{ pathname: `/${props.id}`, state: {id: props.id}}}>
-                <Card>
-                    <CardImg top width="300px" height="180px" src={props.image} alt="album image" />
-                    <CardBody>
+            <Card>
+                <Link to={{ pathname: `/${props.id}`, state: {id: props.id}}}>
+                <CardImg top width="300px" height="180px" src={props.image} alt="album image" />
+                </Link>
+                <CardBody>
+                    <Link to={{ pathname: `/${props.id}`, state: {id: props.id}}}>
                         <CardTitle><h3>{props.songName}</h3></CardTitle>
                         <CardSubtitle><p>by {props.artist}</p></CardSubtitle>
                         <CardSubtitle><p>on {props.album}</p></CardSubtitle>
-                        <Button onClick={props.link}>Listen on Spotify</Button>
-                        {/* <Button tag={Link} to="/somewhere" /> */}
-                        {/* <a href={props.link}><Button>Listen on Spotify</Button></a> */}
-                    </CardBody>
-                </Card>
-            </Link>
+                    </Link>
+                    <a href={props.link}> <Button type='button'>Listen on Spotify</Button> </a>
+                </CardBody>
+            </Card>
         </div>
     )
 }

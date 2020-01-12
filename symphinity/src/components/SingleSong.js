@@ -40,14 +40,14 @@ const SingleSong = (props) => {
             // console.log(response.data)
             setSong(response.data);
         })
-    },[])
+    },[songId])
 
     useEffect(() => {
         spotifyWithAuth().get(`/audio-features/${songId}`)
         .then(response => {
             setFeatures(response.data);
         })
-    },[])
+    },[songId])
 
     useEffect(() => {
         if (song && features && song.artists) {
@@ -102,7 +102,8 @@ const SingleSong = (props) => {
           seconds = Math.floor((duration / 1000) % 60),
           minutes = Math.floor((duration / (1000 * 60)) % 60);
       
-        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        // minutes = (minutes < 10) ? "0" + minutes : minutes;
+        minutes = (minutes < 10) ? + minutes : minutes;
         seconds = (seconds < 10) ? "0" + seconds : seconds;
       
         return minutes + ":" + seconds;
@@ -112,7 +113,7 @@ const SingleSong = (props) => {
         <>      
         {song.artists && features
         ? <> <div className='song-info'>
-                <img className='song-image' src={song.album.images[1].url} alt='album image' />
+                <img className='song-image' src={song.album.images[1].url} alt='album' />
                 <div className='song-details'>
                     <h3>{song.name}</h3>
                     <h4><span>by </span>{song.album.artists[0].name}</h4>
@@ -128,11 +129,11 @@ const SingleSong = (props) => {
                     }) }
                 </div>
                 <div className='graph'>
-                    {graphImage && <img width='500px' height='500px' src={graphImage} alt='ds graph image'/>}
+                    {graphImage && <img width='500px' height='500px' src={graphImage} alt='ds graph'/>}
                 </div>
             </div>
             </>
-        : <p>No Data Yet!</p>}
+        : null}
         </>
     )
 }
