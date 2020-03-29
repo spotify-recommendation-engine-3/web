@@ -88,7 +88,7 @@ function Login (props) {
                                 <Button className="login-btn"color="success">LOG IN</Button>{' '}
                             </ButtonContainer>
                             <ButtonContainer className="button-container"> 
-                                <a href='http://localhost:8888/login'>
+                                <a href='https://oauth-spotify-backend.herokuapp.com/login'>
                                     <button type='button'>Link your <i className="fab fa-spotify"></i></button>
                                 </a>
                             </ButtonContainer>
